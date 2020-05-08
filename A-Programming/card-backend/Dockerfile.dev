@@ -1,0 +1,42 @@
+# start with our base image - php apache
+FROM php:7.3-apache
+
+# install all the system dependencies and enable PHP modules
+RUN apt-get update && apt-get install -y \
+      libicu-dev \
+      libpq-dev \
+      libmcrypt-dev \
+      libzip-dev \
+      #mysql-client \
+      git \
+      zip \
+      unzip \
+    && rm -r /var/lib/apt/lists/*
+RUN pecl install mcrypt
+RUN docker-php-ext-configure zip --with-libzip
+RUN docker-php-ext-enable mcrypt
+RUN docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
+RUN docker-php-ext-install \
+      intl \
+      mbstring \
+      pcntl \
+      pdo_mysql \
+      pdo_pgsql \
+      pgsql \
+      zip \
+      opcache
+
+# install composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
+
+# change uid and gid of apache to docker user uid/gid
+RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+
+# change the web_root to cakephp /var/www/html/webroot folder
+RUN sed -i -e "s/html/html\/webroot/g" /etc/apache2/sites-enabled/000-default.conf
+
+# enable apache module rewrite
+RUN a2enmod rewrite
+
+# volume
+VOLUME /var/www/html

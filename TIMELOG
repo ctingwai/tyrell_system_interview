@@ -1,0 +1,32 @@
+Test A
+---
+07052020T10:55|07052020T11:19|Setup dev environment - 24m
+07052020T11:33|07052020T12:20|Setup docker-compose.yml - 47m
+07052020T12:49|07052020T13:36|Plan, digest and making assumptions requirements - 47m
+07052020T13:36|07052020T13:46|Schema design - 10m
+07052020T14:10|08052020T14:13|Baking up models and controllers - 3m
+07052020T14:13|07052020T14:35|Set up rest routes - 22m
+07052020T14:58|07052020T15:33|cards controller/view - 35m
+07052020T16:03|07052020T17:50|random names generator - 107m
+07052020T18:15|07052020T18:50|random cards generator - 35m
+07052020T19:32|07052020T21:08|random cards distribution - 96m
+07052020T21:34|07052020T21:53|set up nextjs with material ui - 19m
+07052020T21:54|07052020T22:24|Input form - 30m
+08052020T08:34|08052020T08:37|Input button feedback - 3m
+08052020T08:37|08052020T08:44|Game table component - 7m
+08052020T08:44|08052020T10:50|API integration - 126m
+08052020T10:50|08052020T11:00|Code cleanup and signature - 10m
+08052020T11:00|08052020T11:50|Production test and build instructions - 50m
+---
+TEST A TOTAL: 11.1 hrs
+---
+
+---
+Test B
+---
+08052020T14:46|08052020T16:04|SQL PoC script - 78m
+08052020T17:30|08052020T18:30|SQL PoC script - 60m
+08052020T19:20|08052020T21:36|Find optimization opportunities - 136m
+---
+TEST B TOTAL: 4.6 hrs
+---
