@@ -1,0 +1,12 @@
+/**
+ * System configuration files
+ *
+ * @author      Chong Ting Wai <tingwai@twcloud.tech>
+ * @since       0.1.0
+ * @link        https://blog.twcloud.tech
+ */
+export default {
+  api: {
+    baseurl: '__API_BASE_URL__',
+  },
+};
